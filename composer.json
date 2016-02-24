@@ -1,21 +1,29 @@
 {
-	"name": "silverstripe/external-content",
-	"description": "A flexible framework for connecting other content sources to a SilverStripe site.",
-	"type": "silverstripe-module",
-	"keywords": ["silverstripe", "external-content", "integration", "api"],
-	"authors": [{
-		"name": "Marcus Nyeholt",
-		"email": "marcus@silverstripe.com.au"
-	}],
-	"require": {
-		"silverstripe/framework": ">=3.0.0"
-	},
-
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0.x-dev"
-		}
-
-	}
-
+    "name": "silverstripe/external-content",
+    "description": "A flexible framework for connecting other content sources to a SilverStripe site.",
+    "type": "silverstripe-module",
+    "keywords": [
+        "silverstripe",
+        "external-content",
+        "integration",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "Marcus Nyeholt",
+            "email": "marcus@silverstripe.com.au"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": ">=3.0.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/nyeholt/silverstripe-external-content/issues"
+    },
+    "homepage": "https://github.com/nyeholt/silverstripe-external-content"
 }
