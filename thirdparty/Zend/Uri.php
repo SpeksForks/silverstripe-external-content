@@ -153,7 +153,7 @@ abstract class Zend_Uri
      *
      * @param array $config
      */
-    static public function setConfig(array $config)
+    public static function setConfig(array $config)
     {
         foreach ($config as $k => $v) {
             self::$_config[$k] = $v;

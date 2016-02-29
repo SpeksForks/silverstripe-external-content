@@ -10,7 +10,7 @@
 class ExternalHtmlEditorField_Toolbar extends RequestHandler {
 	protected $controller, $name;
 
-	function __construct($controller, $name) {
+    public function __construct($controller, $name) {
 		parent::__construct();
 
 		$this->controller = $controller;
@@ -23,7 +23,7 @@ class ExternalHtmlEditorField_Toolbar extends RequestHandler {
 	 *
 	 * @return Form
 	 */
-	function LinkForm() {
+    public function LinkForm() {
 		Requirements::javascript(THIRDPARTY_DIR . "/behaviour.js");
 		Requirements::javascript(ExternalContentAdmin::$directory . "/javascript/external_tiny_mce_improvements.js");
 
@@ -71,7 +71,7 @@ class ExternalHtmlEditorField_Toolbar extends RequestHandler {
 	 *
 	 * @return Form
 	 */
-	function ImageForm() {
+    public function ImageForm() {
 		Requirements::javascript(THIRDPARTY_DIR . "/behaviour.js");
 		Requirements::javascript(EXTERNALCONTENT . "/javascript/external_tiny_mce_improvements.js");
 		Requirements::css('cms/css/TinyMCEImageEnhancement.css');
@@ -128,7 +128,7 @@ class ExternalHtmlEditorField_Toolbar extends RequestHandler {
 		return $form;
 	}
 
-	function FlashForm() {
+    public function FlashForm() {
 		Requirements::javascript(THIRDPARTY_DIR . "/behaviour.js");
 		Requirements::javascript(EXTERNALCONTENT . "/javascript/external_tiny_mce_improvements.js");
 		Requirements::javascript(THIRDPARTY_DIR . '/SWFUpload/SWFUpload.js');

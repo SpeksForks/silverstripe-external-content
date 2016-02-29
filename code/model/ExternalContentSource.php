@@ -72,15 +72,15 @@ class ExternalContentSource extends DataObject {
 	 * sources aren't really referred to by URL directly
 	 */
 
-	function Link($action = null) {
+    public function Link($action = null) {
 		return Director::baseURL() . $this->RelativeLink($action);
 	}
 
-	function RelativeLink($action = null) {
+    public function RelativeLink($action = null) {
 		return ExternalContentPage_Controller::URL_STUB . '/view/' . $this->ID;
 	}
 
-	function TreeTitle() {
+    public function TreeTitle() {
 		return $this->Name;
 	}
 
@@ -273,7 +273,7 @@ class ExternalContentSource extends DataObject {
 	 *
 	 * @return string
 	 */
-	function CMSTreeClasses() {
+    public function CMSTreeClasses() {
 		$classes = sprintf('class-%s', $this->class);
 		// Ensure that classes relating to whether there are further nodes to download are included
 		$classes .= $this->markingClasses();
@@ -286,7 +286,7 @@ class ExternalContentSource extends DataObject {
 	 *
 	 * @return string
 	 */
-	function CMSTreeCSS() {
+    public function CMSTreeCSS() {
 		return null;
 	}
 
@@ -298,7 +298,7 @@ class ExternalContentSource extends DataObject {
 	 *
 	 * @return string a html string ready to be directly used in a template
 	 */
-	function getTreeTitle() {
+    public function getTreeTitle() {
 		$treeTitle = sprintf(
 			"<span class=\"jstree-pageicon\"></span><span class=\"item\">%s</span>",
 			Convert::raw2xml(str_replace(array("\n","\r"),"",$this->Name))

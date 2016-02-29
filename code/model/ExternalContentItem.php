@@ -138,7 +138,7 @@ class ExternalContentItem extends DataObject {
 	 * @param $action
 	 * @return String
 	 */
-	function Link($action = null) {
+    public function Link($action = null) {
 		$cur = Controller::curr();
 		if ($cur instanceof ExternalContentPage_Controller) {
 			return $cur->data()->LinkFor($this, 'view');
@@ -153,7 +153,7 @@ class ExternalContentItem extends DataObject {
 	 * @param $action
 	 * @return String
 	 */
-	function RelativeLink($action = null) {
+    public function RelativeLink($action = null) {
 		$cur = Controller::curr();
 		if ($cur instanceof ExternalContentPage_Controller) {
 			return $cur->data()->LinkFor($this, 'view');
@@ -377,7 +377,7 @@ class ExternalContentItem extends DataObject {
 	 *
 	 * @see sapphire/core/ViewableData#__get($property)
 	 */
-	function __get($prop) {
+    public function __get($prop) {
 		if (isset($this->remoteProperties[$prop])) {
 			return $this->remoteProperties[$prop];
 		}
@@ -422,7 +422,7 @@ class ExternalContentItem extends DataObject {
 	 * @param $join A join expression.  May or may not be relevant.
 	 * @param $limit A limit expression, either "(count)", or "(start), (count)"
 	 */
-	function instance_get($filter = "", $sort = "", $join = "", $limit = "", $containerClass = "ArrayList") {
+    public function instance_get($filter = "", $sort = "", $join = "", $limit = "", $containerClass = "ArrayList") {
 
 	}
 
@@ -434,7 +434,7 @@ class ExternalContentItem extends DataObject {
 	 * @param $join A join expression.  May or may not be relevant.
 	 * @param $limit A limit expression, either "(count)", or "(start), (count)"
 	 */
-	function instance_get_one($filter, $sort = "") {
+    public function instance_get_one($filter, $sort = "") {
 
 	}
 
@@ -443,14 +443,14 @@ class ExternalContentItem extends DataObject {
 	 * Write the current object back to the database.  It should know whether this is a new object, in which case this would
 	 * be an insert command, or if this is an existing object queried from the database, in which case thes would be
 	 */
-	function write() {
+    public function write() {
 
 	}
 
 	/**
 	 * Remove this object from the database.  Doesn't do anything if this object isn't in the database.
 	 */
-	function delete() {
+    public function delete() {
 
 	}
 
@@ -458,7 +458,7 @@ class ExternalContentItem extends DataObject {
 	 * Save content from a form into a field on this data object.
 	 * Since the data comes straight from a form it can't be trusted and will need to be validated / escaped.'
 	 */
-	function setCastedField($fieldName, $val) {
+    public function setCastedField($fieldName, $val) {
 		$mapping = $this->editableFieldMapping();
 		if (isset($mapping[$fieldName])) {
 			$this->$fieldName = $val;
@@ -470,7 +470,7 @@ class ExternalContentItem extends DataObject {
 	 *
 	 * @return string
 	 */
-	function CMSTreeClasses() {
+    public function CMSTreeClasses() {
 		$classes = sprintf('class-%s', $this->class);
 		// Ensure that classes relating to whether there are further nodes to download are included
 		$classes .= $this->markingClasses();
@@ -483,7 +483,7 @@ class ExternalContentItem extends DataObject {
 	 *
 	 * @return string
 	 */
-	function CMSTreeCSS() {
+    public function CMSTreeCSS() {
 		return null;
 	}
 
@@ -495,7 +495,7 @@ class ExternalContentItem extends DataObject {
 	 *
 	 * @return string a html string ready to be directly used in a template
 	 */
-	function getTreeTitle() {
+    public function getTreeTitle() {
 		$title = $this->Title;
 		if (!$title) {
 			$title = $this->Name;

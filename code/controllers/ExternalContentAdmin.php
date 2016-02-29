@@ -236,7 +236,7 @@ class ExternalContentAdmin extends LeftAndMain implements CurrentPageIdentifier,
 	/**
 	 * Return the form for editing
 	 */
-	function getEditForm($id = null, $fields = null) {
+    public function getEditForm($id = null, $fields = null) {
 		$record = null;
 
 		if(!$id){
@@ -459,7 +459,7 @@ class ExternalContentAdmin extends LeftAndMain implements CurrentPageIdentifier,
 	 *
 	 * @return Form
 	 */
-	function DeleteItemsForm() {
+    public function DeleteItemsForm() {
 		$form = new Form(
 						$this,
 						'DeleteItemsForm',

@@ -18,7 +18,7 @@ class ECUtils {
 	 * @param unknown_type $filter
 	 * @return unknown_type
 	 */
-	function dbQuote($filter = array(), $join = " AND ") {
+    public function dbQuote($filter = array(), $join = " AND ") {
 		$QUOTE_CHAR = defined('DB::USE_ANSI_SQL') ? '"' : '';
 
 		$string = '';
@@ -73,7 +73,7 @@ class ECUtils {
 		return $val;
 	}
 
-	function log($message, $level=null) {
+    public function log($message, $level=null) {
 		if (!$level) {
 			$level = SS_Log::NOTICE;
 		}
